@@ -1,13 +1,13 @@
-FROM golang:1.8 as build-stage
+FROM golang:alpine as builder
 
 WORKDIR /usr/src/app
+
 COPY hello.go .
-RUN go build -o hello .
 
+RUN CGO_ENABLED=0 go build -o /app hello.go
 
-FROM alpine:latest
+FROM  scratch
 
+COPY --from=builder /app /app
 
-COPY --from=build-stage /usr/src/app /bin
-
-CMD hello
+ENTRYPOINT [ "./app" ]
