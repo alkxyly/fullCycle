@@ -148,7 +148,6 @@ describe("Order repository test", () => {
     const product = new Product("1", "Product 1", 10);
     await productRepository.create(product);
     
-
     const ordemItem = new OrderItem(
       "1",
       product.name,
