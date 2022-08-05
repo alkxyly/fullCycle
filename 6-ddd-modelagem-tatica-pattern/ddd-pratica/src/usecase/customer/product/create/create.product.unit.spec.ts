@@ -1,10 +1,9 @@
 import CreateProductUseCase from "./create.product.usecase";
 
-const input = {
+let  input = {
     name: "Nootboot",
     price: 100
 };
-
 
 const MockRepository = () => {
     return {
