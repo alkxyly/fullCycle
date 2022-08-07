@@ -1,5 +1,5 @@
-import Product from "../../../../domain/product/entity/product";
-import ProductFactory from "../../../../domain/product/factory/product.factory";
+
+import Product from "../../../domain/product/entity/product";
 import FindProductUseCase from "./find.product.usecase";
 
 const product = new Product("123", "Nootboot", 100);
